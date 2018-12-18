@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Todo</title>
+    <title>Leah's Post Surgery ToDo List</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
@@ -18,6 +18,10 @@
       body {
         background-color: #A3BAD9;
         font-family: 'Asap', sans-serif;
+      }
+      h2 {
+        color:#ffec99;
+        font-weight: bolder;
       }
       .del {
         text-decoration: line-through;
@@ -41,10 +45,9 @@
         padding: 10px 10px !important;
         border-bottom: 1px dashed teal;
       }
-        .custom-button{
+      .custom-button{
         cursor: pointer;
       }
-      
       .list-group li{
         cursor: pointer;
       }
@@ -61,12 +64,16 @@
 
   <body>
     <div class="container" varient="outline-dark" id="root">
+      <br />
+      
         <div class="row">
             <div class="col-10 offset-1">
                 <br><br>
                 <div class="card">
                   <div class="todo-title">
-                    Leah Post Surgery Todo List:
+                    <marquee>
+                      <h2>🏥 Leah's Recovery Checklist ⛰</h2>
+                    </marquee>
                   </div>
                   <div class="card-body">
                       <form v-on:submit.prevent>

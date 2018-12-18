@@ -52,8 +52,9 @@ func init() {
 }
 
 func todoHandler(w http.ResponseWriter, r *http.Request) {
-	err := rnd.Template(w, http.StatusOK, []string{"todo.html"}, nil)
+	err := rnd.Template(w, http.StatusOK, []string{"index.html"}, nil)
 	checkErr(err)
+
 }
 
 func main() {
