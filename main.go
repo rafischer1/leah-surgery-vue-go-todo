@@ -52,7 +52,7 @@ func init() {
 }
 
 func todoHandler(w http.ResponseWriter, r *http.Request) {
-	err := rnd.Template(w, http.StatusOK, []string{"todo.tpl"}, nil)
+	err := rnd.Template(w, http.StatusOK, []string{"todo.html"}, nil)
 	checkErr(err)
 }
 
