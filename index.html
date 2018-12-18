@@ -63,7 +63,7 @@
   </head>
 
   <body>
-    <div class="container" varient="outline-dark" id="root">
+    <div class="container" letient="outline-dark" id="root">
       <br />
       
         <div class="row">
@@ -102,7 +102,7 @@
  
     <!--Establish the Vue and two-way all the data toggling-->
     <script type="text/javascript">
-      var Vue = new Vue({
+      let Vue = new Vue({
         el: '#root',
         delimiters: ['@{', '}'],
         data: {
@@ -112,13 +112,11 @@
           todos: []
         },
         mounted () {
-          this.$http.get('todo').then(response => {
-            this.todos = response.body.data;
-          });
+          this.$http.get('todo').then(response => this.todos = response.body.data)
         },
         methods: {
-          addTodo(){
-            if (this.todo.title == ''){
+          addTodo() {
+            if (this.todo.title == '') {
               this.showError = true
             }else{
               this.showError = false
@@ -140,31 +138,29 @@
               }
             }
           },
-          checkForEnter(event){
-            if (event.key == "Enter") {
-              this.addTodo()
-            }
+          checkForEnter(event) {
+            if (event.key == "Enter") this.addTodo()
           },
-          toggleTodo(todo, todoIndex){
-            var completedToggle
+          toggleTodo(todo, todoIndex) {
+            let completedToggle
             if (todo.completed == true) {
               completedToggle = false
             }else{
               completedToggle = true
             }
             this.$http.put('todo/'+todo.id, {id: todo.id, title: todo.title, completed: completedToggle}).then(response => {
-              if(response.status == 200){
+              if(response.status == 200) {
                 this.todos[todoIndex].completed = completedToggle
               }
             })
           },
-          editTodo(todo, todoIndex){
+          editTodo(todo, todoIndex) {
             this.enableEdit = true
             this.todo = todo
             this.todo.todoIndex = todoIndex
           },
-          deleteTodo(todo, todoIndex){
-            if(confirm(`Is this completed? Click to officially delete ${todo}`)){
+          deleteTodo(todo, todoIndex) {
+            if(confirm(`Click "ok" to delete: '${todo.title.toUpperCase()}'`)){
               this.$http.delete('todo/'+todo.id).then(response => {
                 if(response.status == 200){
                   this.todos.splice(todoIndex, 1)
