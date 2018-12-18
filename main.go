@@ -51,8 +51,8 @@ func init() {
 	db = sess.DB(dbName)
 }
 
-func homeHandler(w http.ResponseWriter, r *http.Request) {
-	err := rnd.Template(w, http.StatusOK, []string{"home.tpl"}, nil)
+func todoHandler(w http.ResponseWriter, r *http.Request) {
+	err := rnd.Template(w, http.StatusOK, []string{"todo.tpl"}, nil)
 	checkErr(err)
 }
 
@@ -62,7 +62,7 @@ func main() {
 
 	r := chi.NewRouter()
 	r.Use(middleware.Logger)
-	r.Get("/", homeHandler)
+	r.Get("/", todoHandler)
 
 	r.Mount("/todo", todoHandlers())
 

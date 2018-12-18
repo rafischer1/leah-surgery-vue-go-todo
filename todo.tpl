@@ -4,6 +4,7 @@
     <title>Todo</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script type="text/javascript" src="https://unpkg.com/vue@2.3.4"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.3.4"></script>
@@ -13,13 +14,11 @@
     <style type="text/css">
       body {
         background-color: #A3BAD9;
+        font-family: 'Asap', sans-serif;
       }
       .del {
-          text-decoration: line-through;
-      }
-      .card{
-        border-radius: 0 !important;
-        border: none;
+        text-decoration: line-through;
+        color: salmon;
       }
       .card-body{
         padding: 0 !important;
@@ -36,24 +35,15 @@
         border-top-right-radius: 5px;
       }
       .custom-input{
-        border-radius: 0 !important;
         padding: 10px 10px !important;
         border-bottom: 1px dashed teal;
       }
         .custom-button{
-        border-radius: 0 !important;
         cursor: pointer;
       }
-      .custom-button:focus, .custom-button:active{
-        box-shadow: none !important;
-      }
+      
       .list-group li{
         cursor: pointer;
-        border-radius: 0 !important;
-      }
-      .checked{
-        background: #ecf0f1;
-        color: #95a5a6;
       }
       .error{
         border: 2px solid #e74c3c !important;
