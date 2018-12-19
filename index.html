@@ -33,7 +33,7 @@
       .todo-title{
         width: 100%;
         background: teal;
-        color: #ecf0f1;
+        color: #ffec99;
         font-size: 30px;
         font-weight: bold;
         padding: 2% 10px;
@@ -63,7 +63,7 @@
   </head>
 
   <body>
-    <div class="container" letient="outline-dark" id="root">
+    <div class="container" varient="outline-dark" id="root">
       <br />
       
         <div class="row">
@@ -102,7 +102,7 @@
  
     <!--Establish the Vue and two-way all the data toggling-->
     <script type="text/javascript">
-      let Vue = new Vue({
+      var Vue = new Vue({
         el: '#root',
         delimiters: ['@{', '}'],
         data: {
@@ -111,11 +111,13 @@
           todo: {id: '', title: '', completed: false},
           todos: []
         },
+        
         mounted () {
           this.$http.get('todo').then(response => this.todos = response.body.data)
         },
+
         methods: {
-          addTodo() {
+          addTodo(){
             if (this.todo.title == '') {
               this.showError = true
             }else{
