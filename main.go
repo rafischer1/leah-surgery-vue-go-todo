@@ -87,7 +87,7 @@ func main() {
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 	srv.Shutdown(ctx)
 	defer cancel()
-	log.Println("Server gracefully stopped!")
+	log.Println("Server thankfully stopped!")
 }
 
 func todoHandlers() http.Handler {
@@ -236,3 +236,5 @@ func deleteTodo(w http.ResponseWriter, r *http.Request) {
 		"message": "Todo deleted successfully",
 	})
 }
+
+// bson.IsObjectIdHex(id)
